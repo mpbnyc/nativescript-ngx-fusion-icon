@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noEmitHelpers": false,
+		"noEmitOnError": false,
+		"noEmit": false,
+        "allowUnreachableCode": true,
+        "skipLibCheck": true
+    },
+    "files": [
+        "index.ts"
+    ]
+}
