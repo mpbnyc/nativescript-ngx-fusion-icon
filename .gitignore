@@ -20,3 +20,4 @@ node_modules
 publish/src
 publish/package
 cficon/node_modules
+cficon/platforms

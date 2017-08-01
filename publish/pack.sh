@@ -28,17 +28,19 @@ pack() {
     # compile package and copy files required by npm
     echo 'Building /src...'
     cd "$TO_SOURCE_DIR"
-    node_modules/.bin/tsc
+    tsc
     cd ..
 
     echo 'Creating package...'
     # create package dir
     mkdir "$PACK_DIR"
-
+    echo "created directory"
     # create the package
     cd "$PACK_DIR"
+    echo "moved to pack dir"
+    pwd
     npm pack ../"$TO_SOURCE_DIR"
-
+    echo "npm packed"
     # delete source directory used to create the package
     cd ..
     node_modules/.bin/rimraf "$TO_SOURCE_DIR"

@@ -9,7 +9,6 @@
     }
   },
   "scripts": {
-    "prepublish": "cd CfIcon && tsc",
     "demo.ios": "npm run preparedemo && cd demo && tns run ios",
     "demo.android": "npm run preparedemo && cd demo && tns run android",
     "preparedemo": "cd demo && npm install .. ",
