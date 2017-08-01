@@ -7,11 +7,14 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { TNSFontIconModule, TNSFontIconService } from 'nativescript-ng2-fonticon';
 import { AppComponent } from "./app.component";
 import { CfIconComponent } from "./lib/components/icon/icon.component";
+import { CfImageComponent } from "./lib/components/image/image.component";
+import { CfButtonComponent } from "./lib/components/button/button.component";
+import { CfRatingComponent } from "./lib/components/rating/rating.component";
 import { TemplateService } from "./lib/services/template-service/template.service";
 import { ConfigService } from "./lib/services/configuration-service/configuration.service";
 
 @NgModule({
-  declarations: [CfIconComponent],
+  declarations: [CfIconComponent, CfImageComponent, CfButtonComponent, CfRatingComponent],
   imports: [
     CommonModule,
     NativeScriptHttpModule,
@@ -24,7 +27,7 @@ import { ConfigService } from "./lib/services/configuration-service/configuratio
   providers: [ TNSFontIconService, TemplateService, ConfigService,
   ModalDialogService,
         { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }],
-  exports: [CfIconComponent],
+  exports: [CfIconComponent, CfImageComponent, CfButtonComponent, CfRatingComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class FusionModule {}

@@ -1,0 +1,8 @@
+<StackLayout *ngIf="cfImage?.display" [class]="styling?.container?.class" [ngClass]="getContainerClass()">
+    <StackLayout class="cf-image-container {{cfImage?.labelPosition}}">
+        <Label [text]="cfImage?.label" style="display: flex; flex-grow: 1; padding: 8px;" [class]="styling?.label?.class" [ngClass]="getLabelClass()" *ngIf="cfImage?.label !== '' && cfImage?.labelPosition === 'top'"></Label>
+        <Image style="display:flex; box-sizing: border-box;" [class]="styling?.image?.class" [ngClass]="getImageClass()" src="{{cfImage.url}}" alt="{{cfImage?.alt}}" labelPosition="bottom"></Image>
+        <Label [text]="cfImage.label" color="black"></Label>
+    </StackLayout>
+    <cf-notification *ngIf="notification && (notification?.value || notification?.icon)" [settings]="notification" (click)="cfNotificationAction(notification)"></cf-notification>
+</StackLayout>
