@@ -1,8 +1,8 @@
 {
   "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
+  "license": "LICENSE",
   "readme": "NativeScript Application",
-  "repository": "<fill-your-repository-here>",
+  "repository": "github.com/mpbnyc/nativescript-ngx-fusion-icon",
   "nativescript": {
     "id": "org.nativescript.CfIcon",
     "tns-android": {
@@ -35,7 +35,7 @@
     "babel-types": "6.25.0",
     "babylon": "6.17.4",
     "lazy": "1.0.11",
-    "nativescript-dev-typescript": "~0.5.0",
-    "typescript": "2.3.4"
+    "nativescript-dev-typescript": "^0.5.0",
+    "typescript": "^2.4.2"
   }
 }

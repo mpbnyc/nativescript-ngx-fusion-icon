@@ -62,14 +62,5 @@
     "type": "git",
     "url": "git+https://github.com/mpbnyc/nativescript-ngx-fusion-icon.git"
   },
-  "scripts": {
-    "demo.android": "npm run preparedemo && cd demo && tns run android",
-    "demo.ios": "npm run preparedemo && cd demo && tns run ios",
-    "ios": "xcproj --project platforms/ios/YourApp.xcodeproj touch; xcproj --project platforms/ios/Pods/Pods.xcodeproj touch; tns livesync ios --emulator --watch",
-    "livesync.android": "cd slides  && tns livesync android --watch",
-    "livesync.ios": "cd slides  && tns livesync ios --watch",
-    "preparedemo": "cd demo && npm install .. ",
-    "setup": "npm install && cd demo && npm install && cd .. &&  cd demo && tns plugin add .. && cd .."
-  },
   "version": "0.0.1"
 }
