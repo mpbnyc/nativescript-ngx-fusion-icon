@@ -24,7 +24,13 @@ import { TemplateService } from '../../services/template-service/template.servic
 	[ngClass]="getIconClass()">
 	</Label>
   `,
-  styles: [`
+  styles: [
+	`
+	.mdi {
+  		font-family: "Material Icons", "MaterialIcons-Regular";
+	}
+	`,
+	`
 	:host {
     position: relative;
     z-index: 0;
