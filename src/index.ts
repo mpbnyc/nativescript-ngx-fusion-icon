@@ -1,1 +1,1 @@
-export { FusionModule } from './CfIcon/app/fusion.module';
+export { FusionModule } from './fusion.module';

@@ -5,7 +5,6 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { TNSFontIconModule, TNSFontIconService } from 'nativescript-ng2-fonticon';
-import { AppComponent } from "./app.component";
 import { CfIconComponent } from "./lib/components/icon/icon.component";
 import { CfImageComponent } from "./lib/components/image/image.component";
 import { CfButtonComponent } from "./lib/components/button/button.component";
