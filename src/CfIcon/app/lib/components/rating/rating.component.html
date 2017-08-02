@@ -1,9 +1,0 @@
-<StackLayout class="cf-rating {{styling?.container?.class}}" [ngClass]="styling?.container?.dynamicClass">
-    <Label [text]="cfRating?.label" class="cf-rating-label {{cfRating?.disable ? 'cf-rating-disable':''}} {{styling?.label?.class}}" [hidden]="!cfRating?.label" [ngClass]="styling?.label?.dynamicClass"></Label>
-    <StackLayout orientation="horizontal" class="cf-rating-items {{cfRating?.iconsVertical ? 'icons-vertical':''}} {{cfRating?.countFromEnd ? 'count-from-end':''}}">
-        <StackLayout *ngFor="let item of cfItems, let i = index">
-			<cf-icon [ngStyle]="{'color': (i+1 <= cfRating?.value) ? getHighlitedColor() : getEmptyColor()}" 
-            [name]="cfRating?.icon" [size]="styling?.iconSize" (cfOnTap)="setRating(i)" (dblclick)="resetCurrentItem(i)"></cf-icon>
-		</StackLayout>
-    </StackLayout>
-</StackLayout>

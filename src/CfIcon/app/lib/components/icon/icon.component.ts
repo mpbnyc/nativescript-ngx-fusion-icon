@@ -18,8 +18,50 @@ import { TemplateService } from '../../services/template-service/template.servic
  */
 @Component({
   selector: 'cf-icon',
-  templateUrl: './lib/components/icon/icon.component.html',
-  styleUrls: ['./lib/components/icon/icon.component.css']
+  template: `
+	<Label class="mdi" [text]="currentIcon.name" [fontSize]="currentIcon.size" (tap)="cfIconToggled()"
+	class="cf-icon-style cf-toggling-icon {{checked? styling?.icon?.class : styling?.toggleIcon?.icon? styling?.toggleIcon?.icon?.class: ''}}"
+	[ngClass]="getIconClass()">
+	</Label>
+  `,
+  styles: [`
+	:host {
+    position: relative;
+    z-index: 0;
+    display: inline-flex;
+    &.cf-icon-is-disabled md-icon {
+        color: rgba(0, 0, 0, 0.38) !important;
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+    &.cf-menu-trigger md-icon {
+        cursor: pointer;
+        transition: all 0.2s ease;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .cf-toggling-icon {
+        cursor: pointer;
+    }
+    &.notification-clickable cf-notification:hover {
+        cursor: pointer;
+    }
+	}
+
+	.mat-icon {
+		padding: 0px;
+	}
+
+	// .cf-default-icon {
+	//     background-color: transparent;
+	// }
+	.cf-close-icon {
+		color: #EF5350;
+	}
+
+	.cf-icon-style {}
+  `]
 })
 
 export class CfIconComponent extends CfCoreComponent implements OnInit {

@@ -1,7 +1,7 @@
 {
-  "description": "NativeScript Application",
+  "description": "Nativescript Fusion Components",
   "license": "LICENSE",
-  "readme": "NativeScript Application",
+  "readme": "Some NS fusion components",
   "repository": "github.com/mpbnyc/nativescript-ngx-fusion-icon",
   "nativescript": {
     "id": "org.nativescript.CfIcon",

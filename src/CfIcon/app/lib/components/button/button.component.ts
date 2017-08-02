@@ -20,8 +20,20 @@ import { TemplateService } from '../../services/template-service/template.servic
  */
 @Component({
   selector: 'cf-button',
-  templateUrl: './lib/components/button/button.component.html',
-  styleUrls: ['./lib/components/button/button.component.css']
+  template: `
+<StackLayout class="{{styling?.container?.class}}" [ngClass]="getContainerClass()">
+  <Button height="100" class="btn-primary {{styling?.button?.class}}" [color]="styling?.button?.themeColor" [isEnabled]="!disabled" (tap)="buttonTapped()">
+      <FormattedString>
+        <Span class="mdi" [text]="cfButton?.icon.position === 'left' ? (cfButton?.icon.name | fonticon) : ''" [fontSize]="cfButton?.icon.size" verticalAlign="middle" [styling]="styling?.iconStyling"></Span>
+        <Span class="mdi" [text]="cfButton?.waiting?.value && cfButton?.waiting?.icon.position === 'left' ? (cfButton?.waiting?.icon.name | fonticon) : ''" [fontSize]="cfButton?.waiting?.icon.size" verticalAlign="middle" [styling]="styling?.waitingIconStyling"></Span>
+        <Span [text]="cfButton?.label" fontAttributes="Bold" fontSize="24" verticalAlign="middle"></Span>
+        <Span class="mdi" [text]="cfButton?.icon.position === 'right' ? (cfButton?.icon.name | fonticon) : ''" [fontSize]="cfButton?.icon.size" verticalAlign="middle" [styling]="styling?.iconStyling"></Span>
+        <Span class="mdi" [text]="cfButton?.waiting?.value && cfButton?.waiting?.icon.position === 'right' ? (cfButton?.waiting?.icon.name | fonticon) : ''" [fontSize]="cfButton?.waiting?.icon.size" verticalAlign="middle" [styling]="styling?.waitingIconStyling"></Span>
+      </FormattedString>
+  </Button>
+</StackLayout> 
+  `,
+  styles: ['']
 })
 export class CfButtonComponent extends CfCoreComponent  implements OnInit{
   

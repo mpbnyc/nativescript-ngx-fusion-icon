@@ -8,8 +8,12 @@ import { TemplateService } from '../../services/template-service/template.servic
 
 @Component({
   selector: 'cf-core',
-  templateUrl: './lib/components/core.component.html',
-  styleUrls: ['./lib/components/core.component.css']
+  template: `
+  <Layout>
+  Cedrus Fusion UI Core
+  </Layout>
+  `,
+  styles: ['']
 })
 export class CfCoreComponent implements OnInit {
 

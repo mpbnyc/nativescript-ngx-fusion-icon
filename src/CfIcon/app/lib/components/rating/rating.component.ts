@@ -15,8 +15,74 @@ import { TemplateService } from '../../services/template-service/template.servic
  */
 @Component({
   selector: 'cf-rating',
-  templateUrl: './lib/components/rating/rating.component.html',
-  styleUrls: ['./lib/components/rating/rating.component.css']
+  template:`
+  <StackLayout class="cf-rating {{styling?.container?.class}}" [ngClass]="styling?.container?.dynamicClass">
+    <Label [text]="cfRating?.label" class="cf-rating-label {{cfRating?.disable ? 'cf-rating-disable':''}} {{styling?.label?.class}}" [hidden]="!cfRating?.label" [ngClass]="styling?.label?.dynamicClass"></Label>
+    <StackLayout orientation="horizontal" class="cf-rating-items {{cfRating?.iconsVertical ? 'icons-vertical':''}} {{cfRating?.countFromEnd ? 'count-from-end':''}}">
+        <StackLayout *ngFor="let item of cfItems, let i = index">
+			<cf-icon [ngStyle]="{'color': (i+1 <= cfRating?.value) ? getHighlitedColor() : getEmptyColor()}" 
+            [name]="cfRating?.icon" [size]="styling?.iconSize" (cfOnTap)="setRating(i)" (dblclick)="resetCurrentItem(i)"></cf-icon>
+		</StackLayout>
+    </StackLayout>
+  </StackLayout>
+  `,
+  styles: [`
+    .cf-rating {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.cf-rating-label {
+    display: flex;
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 12px;
+}
+
+.cf-rating-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.count-from-end:not(.icons-vertical) {
+        flex-direction: row-reverse;
+    }
+    &.count-from-end.icons-vertical {
+        flex-direction: column;
+    }
+    &.icons-vertical {
+        flex-direction: column-reverse;
+    }
+}
+
+.cf-rating-item {
+    display: flex;
+    border-radius: 50%;
+}
+
+.cf-rating-item /deep/ md-icon {
+    transition: ease 0.15s all;
+}
+
+.cf-rating-item.cf-rating-disabled:hover /deep/ md-icon {
+    cursor: default !important;
+}
+
+.cf-rating-item:not(.cf-rating-disabled):hover /deep/ md-icon {
+    transform: scale(1.1);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.cf-rating-item-icon:not(.cf-rating-disabled) {
+    box-shadow: 1px 1px 5px seagreen;
+    margin: 3px;
+}
+
+.cf-rating-label:not(.cf-rating-disabled) {
+    color: darkseagreen;
+}
+  `]
 })
 export class CfRatingComponent extends CfCoreComponent implements OnInit {
   /**

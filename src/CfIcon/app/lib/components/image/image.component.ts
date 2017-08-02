@@ -19,8 +19,67 @@ import { TemplateService } from '../../services/template-service/template.servic
  */
 @Component({
 	selector: 'cf-image',
-	templateUrl: './lib/components/image/image.component.html',
-	styleUrls: ['./lib/components/image/image.component.css']
+	template: `
+		<StackLayout *ngIf="cfImage?.display" [class]="styling?.container?.class" [ngClass]="getContainerClass()">
+    <StackLayout class="cf-image-container {{cfImage?.labelPosition}}">
+        <Label [text]="cfImage?.label" style="display: flex; flex-grow: 1; padding: 8px;" [class]="styling?.label?.class" [ngClass]="getLabelClass()" *ngIf="cfImage?.label !== '' && cfImage?.labelPosition === 'top'"></Label>
+        <Image style="display:flex; box-sizing: border-box;" [class]="styling?.image?.class" [ngClass]="getImageClass()" src="{{cfImage.url}}" alt="{{cfImage?.alt}}" labelPosition="bottom"></Image>
+        <Label [text]="cfImage.label" color="black"></Label>
+    </StackLayout>
+		</StackLayout>
+	`,
+	styles: [`
+		:host {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    .cf-image-container {
+        width: 100%;
+        height: 100%;
+        .cf-image-label {
+            display: flex;
+            flex-grow: 1;
+            padding: 8px;
+        }
+        .cf-image {
+            display: flex;
+            box-sizing: border-box;
+            // object-fit: contain;
+        }
+        &.top {
+            // flex-direction: column;
+        }
+        &.right {
+            display: flex;
+            flex-direction: row;
+        }
+        &.bottom {
+            // flex-direction: column-reverse;
+        }
+        &.left {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    &.notification-clickable cf-notification:hover {
+        cursor: pointer;
+    }
+}
+
+.cf-defaultImage {
+    max-height: 80%;
+    max-width: 80%;
+}
+
+.cf-defaultImageContainer {
+    height: auto;
+    width: auto;
+    font-size: 12px;
+    font-family: "Avenir", "Helvetica", sans-serif;
+}
+	`]
 })
 export class CfImageComponent extends CfCoreComponent implements OnInit {
 	
