@@ -1,0 +1,7 @@
+<StackPanel height="300">  
+    <slides pageIndicators="true" loop="true">
+        <slide *ngFor="let picture of pictures" class="slide-1">
+            <cf-image [url]="picture.url" [label]="picture.caption"></cf-image>
+        </slide>
+    </slides>
+</StackPanel>

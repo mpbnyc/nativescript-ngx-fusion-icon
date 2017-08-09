@@ -1,0 +1,6 @@
+<StackLayout>
+    <StackLayout [class]="styling?.container?.class" [ngClass]="styling?.container?.dynamicClass">
+        <Label *ngIf="cfList?.title" class="cf-list-title {{styling?.title?.class}}" [ngClass]="styling?.title?.dynamicClass" [text]="cfList?.title"></Label>
+        <ng-content #myContent></ng-content>
+    </StackLayout>
+</StackLayout>

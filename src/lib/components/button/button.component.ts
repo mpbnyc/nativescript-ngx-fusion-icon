@@ -33,7 +33,7 @@ import { TemplateService } from '../../services/template-service/template.servic
   </Button>
 </StackLayout> 
   `,
-  styles: ['']
+  styleUrls: ['']
 })
 export class CfButtonComponent extends CfCoreComponent  implements OnInit{
   

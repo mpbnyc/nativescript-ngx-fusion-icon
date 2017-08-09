@@ -7,16 +7,16 @@
         "escapedName": null,
         "name": null,
         "rawSpec": "..",
-        "spec": "/Users/matt/nativescript-ngx-fusion-icon",
+        "spec": "/Users/matt/nativescript-ngx-fusion-library",
         "type": "directory"
       },
-      "/Users/matt/nativescript-ngx-fusion-icon/demo"
+      "/Users/matt/nativescript-ngx-fusion-library/demo"
     ]
   ],
   "_from": "..",
-  "_id": "nativescript-ngx-fusion-icon@0.0.1",
+  "_id": "nativescript-ngx-fusion-library@0.0.1",
   "_inCache": true,
-  "_location": "/nativescript-ngx-fusion-icon",
+  "_location": "/nativescript-ngx-fusion-library",
   "_phantomChildren": {},
   "_requested": {
     "raw": "..",
@@ -24,7 +24,7 @@
     "escapedName": null,
     "name": null,
     "rawSpec": "..",
-    "spec": "/Users/matt/nativescript-ngx-fusion-icon",
+    "spec": "/Users/matt/nativescript-ngx-fusion-library",
     "type": "directory"
   },
   "_requiredBy": [
@@ -34,13 +34,13 @@
   "_shasum": "6084ed13dbdc08ff10ac63cf61173db1f6fd002a",
   "_shrinkwrap": null,
   "_spec": "..",
-  "_where": "/Users/matt/nativescript-ngx-fusion-icon/demo",
+  "_where": "/Users/matt/nativescript-ngx-fusion-library/demo",
   "author": {
     "name": "Matt Bryan",
     "email": "matt.bryan@cedrus.digital"
   },
   "bugs": {
-    "url": "https://github.com/mpbnyc/nativescript-ngx-fusion-icon/issues"
+    "url": "https://github.com/mpbnyc/nativescript-ngx-fusion-library/issues"
   },
   "dependencies": {
     "@angular/animations": "~4.1.0",
@@ -54,13 +54,13 @@
     "nativescript-material-icons": "^1.0.3",
     "nativescript-ng2-fonticon": "^1.3.4"
   },
-  "description": "NativeScript + Angular Cedrus Fusion icon component",
+  "description": "NativeScript + Angular Cedrus Fusion library component",
   "devDependencies": {},
   "gitHead": "827236fc43daa9ab5f25ab525507936f9025148d",
-  "homepage": "https://github.com/mpbnyc/nativescript-ngx-fusion-icon#readme",
+  "homepage": "https://github.com/mpbnyc/nativescript-ngx-fusion-library#readme",
   "license": "Apache 2.0",
   "main": "index",
-  "name": "nativescript-ngx-fusion-icon",
+  "name": "nativescript-ngx-fusion-library",
   "nativescript": {
     "tns-ios": {
       "version": "3.1.0"
@@ -71,7 +71,7 @@
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mpbnyc/nativescript-ngx-fusion-icon.git"
+    "url": "git+https://github.com/mpbnyc/nativescript-ngx-fusion-library.git"
   },
-  "version": "0.1.0"
+  "version": "0.1.6"
 }
