@@ -32,17 +32,15 @@ import { TemplateService } from '../../services/template-service/template.servic
 @Component({
   selector: "cf-input",
   template: `
-<StackLayout>
     <StackLayout class="container" orientation="horizontal" borderBottomWidth="2" borderBottomColor="blue" margin="0 5 0 5">
         <cf-icon class="lower" [cfIcon]="myFusionIcon" *ngIf="iconPosition==='left'"></cf-icon>
-        <TextField width="100%" [(ngModel)]="value" [hint]="placeholder" [maxLength]="cfInput.maxlength" backgroundColor="transparent" borderColor="transparent" paddingBottom="0" borderBottomWidth="0" [width]="iconPosition === 'right' ? '88%' : '100%'">
-            <FormattedString [maxLength]="cfInput.maxlength">
-                <Span [maxLength]="cfInput.maxlength"></Span>
+        <TextField width="100%" [(ngModel)]="value" [hint]="placeholder" backgroundColor="transparent" borderColor="transparent" paddingBottom="0" borderBottomWidth="0" [width]="iconPosition === 'right' ? '88%' : '100%'">
+            <FormattedString>
+                <Span></Span>
             </FormattedString>
         </TextField>
         <cf-icon [cfIcon]="myFusionIcon" *ngIf="iconPosition==='right'"></cf-icon>
     </StackLayout>
-</StackLayout>  
   `,
   providers: [
     {

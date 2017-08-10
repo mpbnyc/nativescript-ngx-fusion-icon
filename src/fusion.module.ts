@@ -9,11 +9,12 @@ import { CfIconComponent } from "./lib/components/icon/icon.component";
 import { CfImageComponent } from "./lib/components/image/image.component";
 import { CfButtonComponent } from "./lib/components/button/button.component";
 import { CfRatingComponent } from "./lib/components/rating/rating.component";
+import { CfInputComponent } from "./lib/components/input/input.component";
 import { TemplateService } from "./lib/services/template-service/template.service";
 import { ConfigService } from "./lib/services/configuration-service/configuration.service";
 
 @NgModule({
-  declarations: [CfIconComponent, CfImageComponent, CfButtonComponent, CfRatingComponent],
+  declarations: [CfIconComponent, CfImageComponent, CfButtonComponent, CfRatingComponent, CfInputComponent],
   imports: [
     CommonModule,
     NativeScriptHttpModule,
@@ -26,7 +27,7 @@ import { ConfigService } from "./lib/services/configuration-service/configuratio
   providers: [ TNSFontIconService, TemplateService, ConfigService,
   ModalDialogService,
         { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }],
-  exports: [CfIconComponent, CfImageComponent, CfButtonComponent, CfRatingComponent],
+  exports: [CfIconComponent, CfImageComponent, CfButtonComponent, CfRatingComponent, CfInputComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class FusionModule {}
