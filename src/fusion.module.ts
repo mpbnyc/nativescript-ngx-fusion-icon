@@ -12,6 +12,12 @@ import { CfRatingComponent } from "./lib/components/rating/rating.component";
 import { CfInputComponent } from "./lib/components/input/input.component";
 import { TemplateService } from "./lib/services/template-service/template.service";
 import { ConfigService } from "./lib/services/configuration-service/configuration.service";
+import * as models from './lib/models';
+let MODELS_LIST: any[] = [];
+for(let key in MODELS_LIST)
+{
+  MODELS_LIST.push(models[key]);
+}
 
 @NgModule({
   declarations: [CfIconComponent, CfImageComponent, CfButtonComponent, CfRatingComponent, CfInputComponent],
@@ -27,7 +33,7 @@ import { ConfigService } from "./lib/services/configuration-service/configuratio
   providers: [ TNSFontIconService, TemplateService, ConfigService,
   ModalDialogService,
         { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }],
-  exports: [CfIconComponent, CfImageComponent, CfButtonComponent, CfRatingComponent, CfInputComponent],
+  exports: [...MODELS_LIST, CfIconComponent, CfImageComponent, CfButtonComponent, CfRatingComponent, CfInputComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class FusionModule {}
